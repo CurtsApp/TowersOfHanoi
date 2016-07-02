@@ -53,10 +53,10 @@ namespace TowersOfHanoi
             }
             else
             {
-                List<Disk> shortenedStack = stack;
-                shortenedStack.RemoveAt(shortenedStack.Count - 1);
+                List<Disk> shortenedStack = new List<Disk>(stack);
                 List<Disk> lastDiskStack = new List<Disk>();
                 lastDiskStack.Add(stack[stack.Count() - 1]);
+                shortenedStack.RemoveAt(shortenedStack.Count - 1);
                 MoveStack(shortenedStack, start, end, aux);
                 MoveStack(lastDiskStack, start, aux, end);
                 MoveStack(shortenedStack, aux, start, end);
