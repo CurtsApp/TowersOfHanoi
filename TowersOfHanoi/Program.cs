@@ -42,13 +42,14 @@ namespace TowersOfHanoi
 
     public class Nonstatic
     {
-        public ulong stepCount;
+        public ulong StepCount;
 
         public void MoveStack(List<Disk> stack, Post start, Post aux, Post end)
         {
             if (stack.Count == 1)
             {
-                Console.WriteLine("Move {0}, to, {1} post. Step {2}", stack[0].Size, end, stepCount);
+                Console.WriteLine("Move {0}, to, {1} post. Step {2}", stack[0].Size, end, StepCount);
+                StepCount = StepCount + 1;
 
             }
             else
@@ -62,7 +63,7 @@ namespace TowersOfHanoi
                 MoveStack(shortenedStack, aux, start, end);
 
             }
-            stepCount++;
+            
         }
     }
     public class Disk
